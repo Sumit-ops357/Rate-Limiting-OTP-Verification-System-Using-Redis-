@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.1.0'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// Spring Boot Starters
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+	// Redis
+	implementation 'redis.clients:jedis:5.0.1'
+	implementation 'org.springframework.data:spring-data-redis:3.1.5'
+
+	// Lombok (optional, for reducing boilerplate)
+	compileOnly 'org.projectlombok:lombok:1.18.30'
+	annotationProcessor 'org.projectlombok:lombok:1.18.30'
+
+	// JSON Processing
+	implementation 'com.google.code.gson:gson:2.10.1'
+
+	// Logging
+	implementation 'org.springframework.boot:spring-boot-starter-logging'
+
+	// Testing
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.testcontainers:testcontainers:1.19.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
