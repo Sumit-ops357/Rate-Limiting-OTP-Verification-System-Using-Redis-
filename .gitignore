@@ -37,4 +37,4 @@ out/
 .vscode/
 
 # Ignore environment file with secrets
-.env
+system-design-java-project1/.env
