@@ -23,9 +23,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
-	// Redis
-	implementation 'redis.clients:jedis:5.0.1'
-	implementation 'org.springframework.data:spring-data-redis:3.1.5'
+	// (Let Spring Boot manage Spring Data Redis / commons versions)
 
 	// Lombok (optional, for reducing boilerplate)
 	compileOnly 'org.projectlombok:lombok:1.18.30'
