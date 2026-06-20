@@ -25,6 +25,9 @@ public class RateLimitInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object Handler) throws Exception {
 
+        //Used for debugging
+        System.out.println("RATE LIMIT INTERCEPTOR HIT");
+
         String clientIp = getClientIp(request);
 
         //Check if the request is allowed
